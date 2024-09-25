@@ -1,7 +1,7 @@
 from Engine.DifferentialCalculator import *
 from Views.GUI import *
 
-class Main:
+class Calculadora:
     def __init__(self, engine, gui):
         self.engine = engine
         self.gui = gui
