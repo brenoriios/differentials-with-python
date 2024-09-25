@@ -32,5 +32,5 @@ class Calculadora:
             self.gui.expr_input.text = "Erro!"
 
 if __name__ == "__main__":
-    app = Main(DifferentialCalculator(), GUI())
+    app = Calculadora(DifferentialCalculator(), GUI())
     app.run()
