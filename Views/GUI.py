@@ -49,7 +49,7 @@ class GUI:
 
         self.first_order_diff_label = tk.Label(
             master = self.result_frame,
-            text = "Derivadas de primeira ordem:",
+            text = "Derivadas parciais de primeira ordem:",
             justify="left"
         )
 
@@ -61,7 +61,7 @@ class GUI:
 
         self.second_order_diff_label = tk.Label(
             master = self.result_frame,
-            text = "Derivadas de segunda ordem:",
+            text = "Derivadas parciais de segunda ordem:",
             justify="left"
         )
 
