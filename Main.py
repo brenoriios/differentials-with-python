@@ -1,13 +1,12 @@
-from Diff import *
-from GUI import *
+from Engine.DifferentialCalculator import *
+from Views.GUI import *
 
 class Main:
     def __init__(self, engine, gui):
-        self.engine =  engine
+        self.engine = engine
         self.gui = gui
 
         self.bind_button_actions()
-        self.gui.pack_gui()
     
     def run(self):
         self.gui.run()
@@ -19,21 +18,19 @@ class Main:
         )
 
     def calculate(self):
-        self.engine.calc_diff(self.gui.expr_input.get())
-        self.gui.show_results(self.engine.differentials, self.engine.second_order_differentials)
+        try:
+            expression = self.gui.expr_input.get()
+
+            self.engine.calc_diff(expression)
+
+            self.gui.set_first_order_diffs(self.engine.first_order_differentials)
+            self.gui.set_second_order_diffs(self.engine.second_order_differentials)
+
+            self.gui.show_results(self.engine.get_expr_string())
+        except:
+            self.gui.result_frame.pack_forget()
+            self.gui.expr_input.text = "Erro!"
 
 if __name__ == "__main__":
-    app = Main(DiffCalculator(), GUI())
+    app = Main(DifferentialCalculator(), GUI())
     app.run()
-    # diffCalculator = DiffCalculator()
-    # while True:
-    #     try:
-    #         expression = input("Digite uma expressão: ")
-
-    #         if expression == "sair":
-    #             break
-
-    #         diffCalculator.calc_diff(expression)
-                
-    #     except:
-    #         print("Não foi possível resolver a expressão.")
