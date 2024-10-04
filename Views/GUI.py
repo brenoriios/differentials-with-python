@@ -4,7 +4,7 @@ from Models.Differential import *
 class GUI:
     def __init__(self):
         self.root = tk.Tk()
-        self.root.title("Calculadora de Derivadas")
+        self.root.title("Calculadora de Derivadas Parciais")
         self.root.minsize(350, 350)
 
         self.init_gui()

@@ -29,7 +29,7 @@ class Calculadora:
             self.gui.show_results(self.engine.get_expr_string())
         except:
             self.gui.result_frame.pack_forget()
-            self.gui.expr_input.text = "Erro!"
+            self.gui.expr_input.text = "Erro ao calcular as derivadas da função!"
 
 if __name__ == "__main__":
     app = Calculadora(DifferentialCalculator(), GUI())
