@@ -79,7 +79,7 @@ class GUI:
             font=("TkDefaultFont", 13)
         )
 
-        self.tip_label = tk.Label(
+        self.tip_label_error = tk.Label(
             master = self.main_frame,
             text = "",
             font=("TkDefaultFont", 13)
@@ -87,6 +87,7 @@ class GUI:
 
     
     def pack_gui(self):
+        self.tip_label.pack()
         self.expr_input.pack(side="left", fill="x", expand=True)
         self.calculate_button.pack(side="right")
 
@@ -101,7 +102,7 @@ class GUI:
         self.second_order_diff_label.pack(fill="x")
         self.second_order_diff_result.pack(fill="x")
 
-        self.tip_label.pack()
+        self.tip_label_error.pack()
         self.main_frame.pack(fill="both", expand=True)
 
     def set_first_order_diffs(self, results, params = ""):

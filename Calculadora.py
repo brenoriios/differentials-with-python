@@ -19,7 +19,7 @@ class Calculadora:
 
     def calculate(self):
         try:
-            self.gui.tip_label.pack_forget()
+            self.gui.tip_label_error.pack_forget()
             self.gui.clear_results()
             expression = self.gui.expr_input.get()
 
@@ -34,13 +34,13 @@ class Calculadora:
         except MaxVariablesException as e:
             print(str(e))
             self.gui.result_frame.pack_forget()
-            self.gui.tip_label.config(text = str(e))
-            self.gui.tip_label.pack()
+            self.gui.tip_label_error.config(text = str(e))
+            self.gui.tip_label_error.pack()
         except Exception as e:
             print(str(e))
             self.gui.result_frame.pack_forget()
-            self.gui.tip_label.config(text = "Erro ao calcular as derivadas da função!")
-            self.gui.tip_label.pack()
+            self.gui.tip_label_error.config(text = "Erro ao calcular as derivadas da função!")
+            self.gui.tip_label_error.pack()
 
 if __name__ == "__main__":
     app = Calculadora(DifferentialCalculator(), GUI())
